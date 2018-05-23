@@ -22,8 +22,8 @@ public abstract class ImageReader extends MNISTFileReader {
         List<Image> images = new ArrayList<>();
         for (int i = 0; i < numberOfImages; i++) {
             Image image = new Image(numberOfColumns, numberOfRows);
-            for (int j = 0; j < numberOfRows*numberOfColumns; j++) {
-                image.addPixel(data.pop());
+            for (int j = 0; j < image.getSize(); j++) {
+                image.addPixel(new Pixel(data.pop()));
             }
             images.add(image);
         }
